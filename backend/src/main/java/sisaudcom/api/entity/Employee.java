@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 @Entity
 @Table(name = "employees")
 @Data
@@ -29,5 +32,6 @@ public class Employee {
 
     // "A" = Ativo, "I" = Inativo
     @Column(nullable = false, length = 1)
+    @JdbcTypeCode(SqlTypes.CHAR)
     private String status;
 }
