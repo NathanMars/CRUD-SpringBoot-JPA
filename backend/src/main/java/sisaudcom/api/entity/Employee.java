@@ -27,7 +27,7 @@ public class Employee {
     @Column(nullable = false)
     private BigDecimal salary;
 
-    // "A" = Active, "I" = Inactive
+    // "A" = Ativo, "I" = Inativo
     @Column(nullable = false, length = 1)
     private String status;
 }
