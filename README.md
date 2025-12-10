@@ -1,5 +1,5 @@
 # CRUD-SpringBoot-JPA
- Uma aplicação web de gestão de funcionários conteinerizada com docker feita em Spring Boot e React.js. A aplicação permite cadastrar, visualizar, editar e deletar os dados dos funcionários, alem de possuir funcionalidades de login, segurança e autenticação.
+ Uma aplicação web de gestão de funcionários conteinerizada com docker feita em Spring Boot e React.js na estrutura de SPA. A aplicação permite cadastrar, visualizar, editar e deletar os dados dos funcionários, alem de possuir funcionalidades de login, segurança e autenticação.
 
 ## Instruções
 - Abra a raiz do projeto e rode o comando
@@ -32,3 +32,12 @@ Infraestrutura:
 - Nginx para hospedagem do serviço web
 
 O projeto buscou seguir as melhores práticas de desenvolvimento moderno, como principios de Clean Code, SOLID e [Conventional Commits](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13).
+
+# Imagens Demonstrativas
+Tela de Login:  
+
+![Tela de Login](assets/Login-Exemplo.jpeg)  
+
+Tela Principal:  
+
+![Tela Principal](assets/CRUD-Exemplo.jpeg)  
