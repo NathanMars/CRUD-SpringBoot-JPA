@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AuthService {
+public class AuthService implements org.springframework.security.core.userdetails.UserDetailsService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -21,5 +21,20 @@ public class AuthService {
             return passwordEncoder.matches(password, user.get().getPassword());
         }
         return false;
+    }
+
+    @Override
+    public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String username)
+            throws org.springframework.security.core.userdetails.UsernameNotFoundException {
+        User user = userRepository.findByEmail(username)
+                .orElseThrow(() -> new org.springframework.security.core.userdetails.UsernameNotFoundException(
+                        "Usuário não encontrado: " + username));
+
+        return org.springframework.security.core.userdetails.User
+                .builder()
+                .username(user.getEmail())
+                .password(user.getPassword())
+                .roles("USER")
+                .build();
     }
 }
