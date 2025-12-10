@@ -1,12 +1,11 @@
 :root {
   --bg-color: #121212;
   --surface-color: #1e1e1e;
-  --primary-color: #531ece;
   --primary-color: #1e4c81;
   --primary-variant: #3700B3;
-  --secondary-color: #03DAC6;
+  --secondary-color: #1bb198;
   --text-color: #E0E0E0;
-  --error-color: #CF6679;
+  --error-color: #ca2846;
   --border-color: #333;
 }
 
@@ -16,6 +15,41 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dashboard-header {
+  background-color: var(--surface-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-header h1 {
+  padding-left: 5rem;
+}
+
+.dashboard-content {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.list-section {
+  flex: 2;
+  overflow-y: auto;
+  background: var(--surface-color);
+  border-radius: 8px;
+  padding: 1rem;
 }
 
 .form-section {
@@ -49,6 +83,10 @@ body {
   margin-bottom: 2rem;
 }
 
+.error-msg {
+  color: var(--error-color);
+}
+
 /* Forms */
 .form-group {
   margin-bottom: 1rem;
@@ -61,12 +99,19 @@ body {
   color: #aaa;
 }
 
+.form-group input {
+  width: 94%;
+}
+
+.form-group select {
+  width: 100%;
+}
+
 .form-group input,
 .form-group select {
-  width: 94%;
   padding: 0.75rem;
   background: #2c2c2c;
-  border: px solid var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   color: white;
   font-size: 1rem;
@@ -75,6 +120,10 @@ body {
 .form-group input:focus {
   outline: none;
   border-color: var(--primary-color);
+}
+
+::-webkit-calendar-picker-indicator:hover {
+  cursor: pointer;
 }
 
 /* Botões */
@@ -95,4 +144,76 @@ button:hover {
   background-color: var(--primary-color);
   color: #e0e0e0;
   width: 100%;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
+.btn-logout {
+  background-color: transparent;
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
+}
+
+.btn-icon {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.edit {
+  background-color: var(--secondary-color);
+  color: #000;
+}
+
+.delete {
+  background-color: var(--error-color);
+  color: white;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  color: #888;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-badge.active {
+  background-color: rgba(3, 218, 198, 0.2);
+  color: var(--secondary-color);
+}
+
+.status-badge.inactive {
+  background-color: rgba(207, 102, 121, 0.2);
+  color: var(--error-color);
 }

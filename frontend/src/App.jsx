@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
+import Dashboard from './pages/Dashboard';
 
 const PrivateRoute = ({ children }) => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -20,6 +21,7 @@ function App() {
                         </PrivateRoute>
                     }
                 />
+                <Route path="*" element={<Navigate to="/dashboard" />} />
             </Routes>
         </Router>
     );

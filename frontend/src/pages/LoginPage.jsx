@@ -19,7 +19,7 @@ const LoginPage = () => {
             const response = await api.post('/auth/login', { email, password });
 
             localStorage.setItem('user', JSON.stringify({ authdata, email }));
-            // Função de abrir o dashboard será implementada aqui
+            navigate('/dashboard');
         } catch (err) {
             console.error("Erro de Login: ", err);
             setError('Senha ou e-mail incorretos!');
