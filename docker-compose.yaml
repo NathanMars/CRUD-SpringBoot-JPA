@@ -31,15 +31,10 @@ services:
       - "8080:8080"
 
   app-frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile.dev
-    container_name: app-frontend-dev
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+    build: ./frontend
+    container_name: app-frontend
     ports:
-      - "3000:5173"
+      - "3000:80"
     depends_on:
       - app-backend
 
