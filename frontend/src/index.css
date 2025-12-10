@@ -2,6 +2,7 @@
   --bg-color: #121212;
   --surface-color: #1e1e1e;
   --primary-color: #531ece;
+  --primary-color: #1e4c81;
   --primary-variant: #3700B3;
   --secondary-color: #03DAC6;
   --text-color: #E0E0E0;
@@ -43,6 +44,39 @@ body {
   max-width: 400px;
 }
 
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.form-group input,
+.form-group select {
+  width: 94%;
+  padding: 0.75rem;
+  background: #2c2c2c;
+  border: px solid var(--border-color);
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
 /* Botões */
 button {
   cursor: pointer;
@@ -59,6 +93,6 @@ button:hover {
 
 .btn-primary {
   background-color: var(--primary-color);
-  color: #000000;
+  color: #e0e0e0;
   width: 100%;
 }
